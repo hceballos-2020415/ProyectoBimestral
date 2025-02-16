@@ -1,5 +1,5 @@
 import User from '../user/user.model.js'
-import { checkPassword, encrypt } from '../../utils/encrypt.js'
+import { checkPassword, encrypt } from "../../utils/encrypt.js"
 import { generateJwt } from '../../utils/jwt.js'
 
 export const test = (req, res) => {
@@ -12,7 +12,7 @@ export const register = async (req, res) => {
         let data = req.body
         let user = new User(data)
         user.password = await encrypt(user.password)
-        user.role = 'CLIENT'
+        user.role ='ADMIN'
         await user.save()
         return res.send({ message: `Registered successfully, can be logged with username: ${user.username}` })
     } catch (err) {
@@ -39,7 +39,7 @@ export const login = async (req, res) => {
                 token
             })
         }
-        return res.status(400).send({ message: 'Wrong email or password' })
+        return res.status(400).send({ message: 'Wrong username or password' })
     } catch (err) {
         console.error(err)
         return res.status(500).send({ message: 'General error with login function' })
