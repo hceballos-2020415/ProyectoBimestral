@@ -1,5 +1,7 @@
 import Product from './product.model.js'
 import Category from '../category/category.model.js'
+import Bill from '../bill/bill.model.js'
+
 
 // Crear producto
 export const create = async (req, res) => {
@@ -43,6 +45,111 @@ export const getById = async (req, res) => {
     } catch (err) {
         console.error(err)
         return res.status(500).send({ message: 'Error getting product', err })
+    }
+}
+
+// Buscar productos por nombre
+export const searchByName = async (req, res) => {
+    try {
+        const { name } = req.query
+        
+        if (!name) {
+            return res.status(400).send({ message: 'Search term is required' })
+        }
+        
+        // Crear expresión regular para búsqueda insensible a mayúsculas/minúsculas
+        const regex = new RegExp(name, 'i')
+        
+        const products = await Product.find({ 
+            name: regex,
+            status: true 
+        }).populate('category', 'name description')
+        
+        return res.send({ 
+            results: products.length,
+            products 
+        })
+    } catch (err) {
+        console.error(err)
+        return res.status(500).send({ message: 'Error searching products', err })
+    }
+}
+
+// Obtener productos por categoría
+export const getByCategory = async (req, res) => {
+    try {
+        const { categoryId } = req.params
+        
+        // Verificar que la categoría exista
+        const category = await Category.findOne({ _id: categoryId, status: true })
+        if (!category) {
+            return res.status(404).send({ message: 'Category not found' })
+        }
+        
+        const products = await Product.find({ 
+            category: categoryId,
+            status: true 
+        }).populate('category', 'name description')
+        
+        return res.send({ 
+            category: category.name,
+            results: products.length,
+            products 
+        })
+    } catch (err) {
+        console.error(err)
+        return res.status(500).send({ message: 'Error getting products by category', err })
+    }
+}
+
+// Obtener productos más vendidos
+export const getBestSellers = async (req, res) => {
+    try {
+        // Agregar para obtener los productos con más ventas
+        const bestSellers = await Bill.aggregate([
+            // Solo facturas activas y no canceladas
+            { $match: { active: true, status: { $ne: 'CANCELLED' } } },
+            // Desagregar los productos
+            { $unwind: '$products' },
+            // Agrupar por producto y sumar cantidades
+            { 
+                $group: { 
+                    _id: '$products.product', 
+                    totalSold: { $sum: '$products.quantity' }
+                } 
+            },
+            // Ordenar por cantidad vendida (descendente)
+            { $sort: { totalSold: -1 } },
+            // Limitar a los 10 más vendidos
+            { $limit: 10 }
+        ])
+        
+        // Obtener información completa de los productos
+        const productIds = bestSellers.map(item => item._id)
+        
+        const products = await Product.find({ 
+            _id: { $in: productIds },
+            status: true 
+        }).populate('category', 'name')
+        
+        // Añadir la cantidad vendida a cada producto
+        const productsWithSales = products.map(product => {
+            const salesInfo = bestSellers.find(item => 
+                item._id.toString() === product._id.toString()
+            )
+            return {
+                ...product.toObject(),
+                totalSold: salesInfo ? salesInfo.totalSold : 0
+            }
+        })
+        
+        // Ordenar por cantidad vendida
+        productsWithSales.sort((a, b) => b.totalSold - a.totalSold)
+        
+        return res.send({ bestSellers: productsWithSales })
+    } catch (err) {
+        console.error(err)
+        return res.status(500).send({ message: 'Error getting best sellers', err })
     }
 }
 

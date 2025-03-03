@@ -1,12 +1,12 @@
 import { Router } from 'express'
-import { login, register, test } from './auth.controller.js'
-import { validateJwt } from '../../middlewares/validate.jwt.js'
+import { login, register } from './auth.controller.js'
 import { loginValidator, registerValidator } from '../../helpers/validators.js'
 
 const api = Router()
 
+// Ruta protegida para administradores (crear usuarios con cualquier rol)
 api.post('/register', [registerValidator], register)
+
 api.post('/login', [loginValidator], login)
-api.get('/test', validateJwt, test)
 
 export default api

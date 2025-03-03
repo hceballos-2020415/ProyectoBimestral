@@ -81,3 +81,16 @@ export const productValidator = [
         .custom(existCategory),
     validateErrors
 ]
+
+export const billCreateValidator = [
+    body('products')
+        .isArray().withMessage('Products must be an array')
+        .notEmpty().withMessage('Products array cannot be empty'),
+    body('products.*.productId')
+        .isMongoId().withMessage('Invalid product ID')
+        .custom(existProduct),
+    body('products.*.quantity')
+        .isInt({ min: 1 }).withMessage('Quantity must be at least 1'),
+    validateErrors
+]
+

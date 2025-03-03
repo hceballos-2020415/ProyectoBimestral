@@ -81,6 +81,24 @@ export const deleteCategory = async (req, res) => {
         let category = await Category.findOne({_id: id, status: true})
         if(!category) return res.status(404).send({message: 'Category not found'})
         
+        // Buscar una categoría por defecto o crear una si no existe
+        let defaultCategory = await Category.findOne({name: 'Uncategorized'})
+        
+        if(!defaultCategory) {
+            defaultCategory = new Category({
+                name: 'Uncategorized',
+                description: 'Default category for products with no assigned category',
+                status: true
+            })
+            await defaultCategory.save()
+        }
+        
+        // Mover todos los productos de la categoría a eliminar a la categoría por defecto
+        await Product.updateMany(
+            {category: id, status: true},
+            {category: defaultCategory._id}
+        )
+        
         // Eliminar (cambiar status a false)
         let deletedCategory = await Category.findOneAndUpdate(
             {_id: id},
@@ -88,7 +106,9 @@ export const deleteCategory = async (req, res) => {
             {new: true}
         )
         
-        return res.send({message: 'Category deleted successfully'})
+        return res.send({
+            message: 'Category deleted successfully. All associated products have been moved to Uncategorized category'
+        })
     } catch (err) {
         console.error(err)
         return res.status(500).send({message: 'Error deleting category'})
