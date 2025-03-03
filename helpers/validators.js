@@ -38,7 +38,7 @@ export const registerValidator = [
 ]
 
 export const loginValidator = [
-    body('username', 'Username is required')
+    body('username', 'Username is required ')
         .notEmpty()
         .toLowerCase(),
     body('password', 'Password is required')
