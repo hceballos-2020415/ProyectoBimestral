@@ -4,7 +4,7 @@ import { save, get, getById, update, deleteCategory } from './category.controlle
 
 const api = Router()
 
-api.get('/get', get)
+api.get('/', get)
 api.get('/get/:id', getById)
 
 api.post('/save', [validateJwt, isAdmin], save)

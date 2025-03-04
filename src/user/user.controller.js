@@ -1,6 +1,7 @@
 
 import User from "./user.model.js";
 import bcrypt from "bcrypt";
+import { checkPassword, encrypt } from '../../utils/encrypt.js';
 
 
 export const getAll = async (req, res) => {
@@ -35,6 +36,7 @@ export const updateUser = async (req, res) => {
     }
 }
 
+
 export const updatePassword = async (req, res) => {
     try {
         const { id } = req.params;
@@ -45,18 +47,20 @@ export const updatePassword = async (req, res) => {
             return res.status(404).json({ message: "User not found" });
         }
 
-        const isMatch = await bcrypt.compare(oldPassword, user.password);
+        // Usa la misma función checkPassword que usaste en el login
+        const isMatch = await checkPassword(oldPassword, user.password);
         if (!isMatch) {
             return res.status(400).json({ message: "Old password is incorrect" });
         }
 
-        const hashedPassword = await bcrypt.hash(newPassword, 10);
-        user.password = hashedPassword;
+        // Usa la misma función encrypt que usaste para crear el usuario
+        user.password = await encrypt(newPassword);
         await user.save();
 
         res.json({ message: "Password updated successfully" });
     } catch (error) {
-        res.status(500).json({ message: "Error updating password", error });
+        console.error(error);
+        res.status(500).json({ message: "Error updating password", error: error.message });
     }
 }
 

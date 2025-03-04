@@ -9,7 +9,7 @@ const api = Router()
 api.post('/add', [validateJwt, validateClient], addToCart)
 api.get('/get', [validateJwt, validateClient], getCart)
 api.put('/update', [validateJwt, validateClient], updateCartItem)
-api.delete('/remove/:productId', [validateJwt, validateClient], removeFromCart)
+api.delete('/delete/:productId', [validateJwt, validateClient], removeFromCart)
 api.delete('/clear', [validateJwt, validateClient], clearCart)
 
 export default api

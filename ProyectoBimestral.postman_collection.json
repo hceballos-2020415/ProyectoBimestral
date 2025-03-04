@@ -1,0 +1,1002 @@
+{
+	"info": {
+		"_postman_id": "2bf0bb6b-084f-4621-b624-ee6b46235ee5",
+		"name": "ProyectoBimestral",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37951903"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "RegisterClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ivan",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Enrique",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "IEnriquetas",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "IvanEn@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Hola123$$",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "56748979",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "frezzy0415",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "HolaProfeJosue.#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiIsInVzZXJuYW1lIjoiZnJlenp5MDQxNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MTA1MDc0OSwiZXhwIjoxNzQxMDYxNTQ5fQ.5d21CuVG8ddGM5NKs9VxxbDB46ku5lYW8sUA-u-HvWQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiIsInVzZXJuYW1lIjoiZnJlenp5MDQxNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MTA1MDc0OSwiZXhwIjoxNzQxMDYxNTQ5fQ.5d21CuVG8ddGM5NKs9VxxbDB46ku5lYW8sUA-u-HvWQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Hettson Enrique",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Ceballos Alcalan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/user/update/67c6517781ab7956598b3159",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"user",
+								"update",
+								"67c6517781ab7956598b3159"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiIsInVzZXJuYW1lIjoiZnJlenp5MDQxNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc0MTA1MDc0OSwiZXhwIjoxNzQxMDYxNTQ5fQ.5d21CuVG8ddGM5NKs9VxxbDB46ku5lYW8sUA-u-HvWQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "HolaProfeNoj.#",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "HolaProfeJosue.#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/user/update-password/67c6517781ab7956598b3159",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"user",
+								"update-password",
+								"67c6517781ab7956598b3159"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDUxNTYzLCJleHAiOjE3NDEwNjIzNjN9.hekTfLsfsbigjn6_TrJl9lPwND56RNhlkz4XvhYdqHI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/user/delete/67c6531c81ab7956598b315e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"user",
+								"delete",
+								"67c6531c81ab7956598b315e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDY4MDY0LCJleHAiOjE3NDEwNzg4NjR9.rD3VvPT-8419CcCIDkCoQHgb4mrgX3pu0T5bV_ZCx5c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Puma",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Tienda de articulos deportivos",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/category/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"category",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/category/get/67c65991b0485a938bbe19b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"category",
+								"get",
+								"67c65991b0485a938bbe19b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDUyNTYwLCJleHAiOjE3NDEwNjMzNjB9.C2Zj9BGrhDzokQbzssp67Tb-Za4AUBAGz0hu5ykIhK4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Tienda de Calzado y prendas deportivas",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/category/update/67c65991b0485a938bbe19b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"category",
+								"update",
+								"67c65991b0485a938bbe19b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDUyNTYwLCJleHAiOjE3NDEwNjMzNjB9.C2Zj9BGrhDzokQbzssp67Tb-Za4AUBAGz0hu5ykIhK4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/category/delete/67c6596eb0485a938bbe19af",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"category",
+								"delete",
+								"67c6596eb0485a938bbe19af"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDY4MDY0LCJleHAiOjE3NDEwNzg4NjR9.rD3VvPT-8419CcCIDkCoQHgb4mrgX3pu0T5bV_ZCx5c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "KD 17",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Las Kevin Durant 17, el ultimo modelo",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1800.00",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "67c65991b0485a938bbe19b2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/product/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/product/getAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/product/get/67c6972a3dc5363be9693b91",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"get",
+								"67c6972a3dc5363be9693b91"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Lebron 20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/product/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3626/api/product/category/67c65991b0485a938bbe19b2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"category",
+								"67c65991b0485a938bbe19b2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDY4MDY0LCJleHAiOjE3NDEwNzg4NjR9.rD3VvPT-8419CcCIDkCoQHgb4mrgX3pu0T5bV_ZCx5c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "stock",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/product/update/67c69ad0af740625b1185fff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"update",
+								"67c69ad0af740625b1185fff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDY4MDY0LCJleHAiOjE3NDEwNzg4NjR9.rD3VvPT-8419CcCIDkCoQHgb4mrgX3pu0T5bV_ZCx5c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/product/delete/67c698583dc5363be9693b9f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"product",
+								"delete",
+								"67c698583dc5363be9693b9f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "addCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDY5NzU1LCJleHAiOjE3NDEwODA1NTV9.5Hu0nYS6YQLYWNZZSNwzGW7UR3fjZuU7BlNM0hv0Z8A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "productId",
+									"value": "67c69ad0af740625b1185fff",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/cart/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"cart",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDY5NzU1LCJleHAiOjE3NDEwODA1NTV9.5Hu0nYS6YQLYWNZZSNwzGW7UR3fjZuU7BlNM0hv0Z8A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/cart/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"cart",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDY5NzU1LCJleHAiOjE3NDEwODA1NTV9.5Hu0nYS6YQLYWNZZSNwzGW7UR3fjZuU7BlNM0hv0Z8A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "quantity",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "productId",
+									"value": "67c6972a3dc5363be9693b91",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/cart/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"cart",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProductCart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDY5NzU1LCJleHAiOjE3NDEwODA1NTV9.5Hu0nYS6YQLYWNZZSNwzGW7UR3fjZuU7BlNM0hv0Z8A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/cart/delete/67c69ad0af740625b1185fff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"cart",
+								"delete",
+								"67c69ad0af740625b1185fff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clearCart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDY5NzU1LCJleHAiOjE3NDEwODA1NTV9.5Hu0nYS6YQLYWNZZSNwzGW7UR3fjZuU7BlNM0hv0Z8A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/cart/clear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"cart",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bill",
+			"item": [
+				{
+					"name": "createBill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDczMjY2LCJleHAiOjE3NDEwODQwNjZ9.RMCMmyKGd5ofLrXt6VfPmjV_ATQ_3IyLNl7cP17wI10",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "products[0][productId]",
+									"value": "67c6adbdbef0f213fee1a8b7",
+									"type": "text"
+								},
+								{
+									"key": "products[0][quantity]",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/bill/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"bill",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBills",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDczMjY2LCJleHAiOjE3NDEwODQwNjZ9.RMCMmyKGd5ofLrXt6VfPmjV_ATQ_3IyLNl7cP17wI10",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/bill/my-bills",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"bill",
+								"my-bills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBillById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2OWRhZGFmNzQwNjI1YjExODYwMTciLCJuYW1lIjoiSXZhbiIsInVzZXJuYW1lIjoiSUVucmlxdWV0YXMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzQxMDczMjY2LCJleHAiOjE3NDEwODQwNjZ9.RMCMmyKGd5ofLrXt6VfPmjV_ATQ_3IyLNl7cP17wI10",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/bill/detail/67c6aae643939015bcb44afd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"bill",
+								"detail",
+								"67c6aae643939015bcb44afd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBill",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDczMzc2LCJleHAiOjE3NDEwODQxNzZ9.Qye338rD9coWg_eYKA1OPSIhkLVMwPD3M62sbS6iStA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/bill/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"bill",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBillStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDczMzc2LCJleHAiOjE3NDEwODQxNzZ9.Qye338rD9coWg_eYKA1OPSIhkLVMwPD3M62sbS6iStA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "COMPLETED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3626/api/bill/update-status/67c6aae643939015bcb44afd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"bill",
+								"update-status",
+								"67c6aae643939015bcb44afd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBill",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2NTE3NzgxYWI3OTU2NTk4YjMxNTkiLCJuYW1lIjoiSGV0dHNvbiBFbnJpcXVlIiwidXNlcm5hbWUiOiJmcmV6enkwNDE1Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQxMDczMzc2LCJleHAiOjE3NDEwODQxNzZ9.Qye338rD9coWg_eYKA1OPSIhkLVMwPD3M62sbS6iStA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3626/api/bill/delete/67c6ae754b5cf51899c64889",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3626",
+							"path": [
+								"api",
+								"bill",
+								"delete",
+								"67c6ae754b5cf51899c64889"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

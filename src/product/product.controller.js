@@ -51,7 +51,7 @@ export const getById = async (req, res) => {
 // Buscar productos por nombre
 export const searchByName = async (req, res) => {
     try {
-        const { name } = req.query
+        const { name } = req.body
         
         if (!name) {
             return res.status(400).send({ message: 'Search term is required' })

@@ -13,7 +13,7 @@ const generateAdministratorAccount = async function () {
                 name: 'Hettson',
                 surname: 'Ceballos',
                 email: 'hettsonceb@gmail.com',
-                username: 'Frezzy0415',
+                username: 'frezzy0415',
                 phone: '47182759',
                 password: securePassword,
                 role: 'ADMIN'
